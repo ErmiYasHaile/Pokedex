@@ -16,13 +16,16 @@ app.use(express.urlencoded({extended: false}));
 app.get("/Pokemon", (req, res) => {
     // res.send(Pokemon)
     res.render('index.ejs',{
-        Pokemon: Pokemon
+        Pokemons: Pokemon
     })
   });
 
 // SHOW
 app.get("/pokemon/:id", (req, res) => {
-  res.send(Pokemon[req.params.id])
+//   res.send(Pokemon[req.params.id])
+    res.render('show.ejs',{
+        Pokemons: Pokemon[req.params.id]
+    })
 });
 
 
