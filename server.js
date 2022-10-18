@@ -51,8 +51,11 @@ app.delete('/pokemon/:id',(req, res)=>{
 
 // EDIT
 app.get('/pokemon/:id/edit',(req, res)=>{
-    res.render('edit.ejs',)
-})
+    res.render('edit.ejs',{
+        Pokemons: Pokemon[req.params.id],
+        id: req.params.id,
+    })
+});
 
 
 
