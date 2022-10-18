@@ -10,9 +10,13 @@ app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended: false}));
 
 // INDEX
-app.get("/", (req, res) => {
-  res.send('')
-});
+// app.get("/", (req, res) => {
+//   res.send('<h1>This is the homepage</h1>')
+// });
+
+app.get("/pokemon", (req, res) => {
+    res.send(Pokemon)
+  });
 
 // SHOW
 app.get("/:id", (req, res) => {
