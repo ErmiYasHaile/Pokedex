@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const methodOverride = require('method-override'); // Method override
+const pokemon = require("./models/pokemon.js");
 const Pokemon = require("./models/pokemon.js");
 
 // Method override
@@ -57,7 +58,11 @@ app.get('/pokemon/:id/edit',(req, res)=>{
     })
 });
 
-
+// UPDATE
+app.put('/pokemon/:id',(req, res)=>{
+    Pokemon[req.params.id]= req.body
+    res.redirect('/pokemon')
+})
 
 
 app.listen(3000, () => {
