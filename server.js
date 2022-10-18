@@ -21,8 +21,8 @@ app.get("/Pokemon", (req, res) => {
   });
 
 // SHOW
-app.get("/:id", (req, res) => {
-  res.send('')
+app.get("/pokemon/:id", (req, res) => {
+  res.send(Pokemon[req.params.id])
 });
 
 
