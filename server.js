@@ -42,6 +42,19 @@ app.post('/pokemon',(req, res)=>{
     res.redirect('/pokemon')
   })
 
+// DELETE Route
+app.delete('/pokemon/:id',(req, res)=>{
+    console.log('delete route')
+    Pokemon.splice(req.params.id,1)
+    res.redirect('/pokemon')
+})
+
+// EDIT
+app.get('/pokemon/:id/edit',(req, res)=>{
+    res.render('edit.ejs',)
+})
+
+
 
 
 app.listen(3000, () => {
