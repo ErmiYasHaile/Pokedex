@@ -9,10 +9,11 @@
 <body>
     <h1>Pokeman Page</h1>
     <ul>
-        <% for(let i = 0; i < pokeman.length; i++) { %> 
-            <li>
-                <a href="/pokeman/"></a>
-            </li>
+        <% for(let i = 0; i < Pokemon.length; i++) { %> 
+            <td>
+                <a href="/Pokemon/<%= i %>"> <%=Pokemon[i].name %></a>
+            </td>
+            <% } %> 
     </ul>
 </body>
 </html>

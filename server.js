@@ -13,9 +13,11 @@ app.use(express.urlencoded({extended: false}));
 // app.get("/", (req, res) => {
 //   res.send('<h1>This is the homepage</h1>')
 // });
-
-app.get("/pokemon", (req, res) => {
-    res.send(Pokemon)
+app.get("/Pokemon", (req, res) => {
+    // res.send(Pokemon)
+    res.render('index.ejs',{
+        Pokemon: Pokemon
+    })
   });
 
 // SHOW
