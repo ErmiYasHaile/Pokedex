@@ -34,6 +34,15 @@ app.get("/pokemon/:id", (req, res) => {
     })
 });
 
+// POST
+app.post('/pokemon',(req, res)=>{
+    console.log(req.body)
+    Pokemon.push(req.body)
+    console.log(Pokemon)
+    res.redirect('/pokemon')
+  })
+
+
 
 app.listen(3000, () => {
     console.log('listening')
