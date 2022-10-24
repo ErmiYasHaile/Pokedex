@@ -1,0 +1,47 @@
+body {
+  background-image: url(../img/allbkgd.jpg);
+ 
+  margin: 0;
+  padding: 0;
+}
+
+
+.title-container {
+  background-color: #F8FFDB;
+  padding: 40px;
+  margin: 0 auto;
+}
+.container{
+  display: flex;
+  border: 3px solid #EAEAEA;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 54px;
+}
+
+.card {
+  list-style: none;
+  padding: 20px;
+  background-color: #c2c1c1;
+  color: #222;
+  /* text-align: center; */
+  border: 2px solid #B8E8FC;
+  /* width: 20%; */
+  margin: 5px;
+}
+img{
+  height: 200px;
+  width: 200px;
+}
+
+.card:hover {
+  animation: bounce 0.10s;
+}
+
+

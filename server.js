@@ -7,8 +7,12 @@ const Pokemon = require("./models/pokemon.js");
 // Method override
 app.use(methodOverride('_method'));
 
+// static files
+// app.use('/static', express.static('public'))
+app.use(express.static('public'))
 // middleware
 app.use(express.urlencoded({extended: false}));
+// app.use(express.static(__dirname + ‘/public’));
 
 // INDEX
 // app.get("/", (req, res) => {
@@ -60,6 +64,7 @@ app.get('/pokemon/:id/edit',(req, res)=>{
 
 // UPDATE
 app.put('/pokemon/:id',(req, res)=>{
+    //  stats
     Pokemon[req.params.id]= req.body
     res.redirect('/pokemon')
 })
