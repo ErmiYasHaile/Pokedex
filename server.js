@@ -12,7 +12,7 @@ app.use(methodOverride("_method"));
 app.use(express.static("public"));
 // middleware
 app.use(express.urlencoded({ extended: false }));
-// app.use(express.static(__dirname + ‘/public’));
+
 
 // INDEX
 // app.get("/", (req, res) => {
