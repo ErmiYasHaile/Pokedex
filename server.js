@@ -40,8 +40,23 @@ app.get("/pokemon/:id", (req, res) => {
 
 // POST
 app.post("/pokemon", (req, res) => {
+  let stats = {
+    hp: req.body.hp,
+    attack: req.body.attack,
+    defence: req.body.defence,
+    spattack: req.body.spattack,
+    spadefence: req.body.spdefence,
+    speed: req.body.speed,
+  }
+  let newPokemon = {
+    name: req.body.name,
+    img: req.body.img,
+    type: req.body.type,
+    stats: stats,
+
+}
   console.log(req.body);
-  Pokemon.push(req.body);
+  Pokemon.push(newPokemon);
   console.log(Pokemon);
   res.redirect("/pokemon");
 });
@@ -55,15 +70,33 @@ app.delete("/pokemon/:id", (req, res) => {
 
 // EDIT
 app.get("/pokemon/:id/edit", (req, res) => {
+  // console.log((req.params.id))
   res.render("edit.ejs", {
     Pokemons: Pokemon[req.params.id],
-    id: req.params.id,
+    id: [req.params.id],
   });
 });
 
 // UPDATE
 app.put("/pokemon/:id", (req, res) => {
   //  stats
+  let stats = {
+    hp: req.body.hp,
+    attack: req.body.attack,
+    defence: req.body.defence,
+    spattack: req.body.spattack,
+    spadefence: req.body.spdefence,
+    speed: req.body.speed,
+  }
+  let editPokemon = {
+    name: req.body.name,
+    img: req.body.img,
+    type: req.body.type,
+    stats: stats,
+
+}
+pokemon[req.params.id] = editPokemon
+
   Pokemon[req.params.id] = req.body;
   res.redirect("/pokemon");
 });
